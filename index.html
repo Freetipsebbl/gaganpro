@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Gagan Bhai — Session King | VIP Broadcast Match Pass</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Bebas Neue, Rajdhani & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Bebas Neue"', 'sans-serif'],
+                        tech: ['Rajdhani', 'sans-serif'],
+                    },
+                    colors: {
+                        matteObsidian: '#07090F',
+                        broadcastCarbon: '#0E121D',
+                        carbonElevated: '#151B2B',
+                        electricVolt: '#C6FF00',
+                        telegramCyan: '#00A8E8',
+                        vipGold: '#FBBF24',
+                        liveCrimson: '#FF2E4C',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Strictly Zero-Scroll 100dvh Viewport */
+        html, body {
+            height: 100dvh;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #07090F;
+            color: #F8FAFC;
+        }
+
+        /* Clean Matte Obsidian Broadcast Arena Backdrop */
+        .arena-backdrop {
+            background-color: #07090F;
+            background-image:
+                radial-gradient(circle at 18% 8%, rgba(198, 255, 0, 0.10) 0%, transparent 44%),
+                radial-gradient(circle at 84% 12%, rgba(0, 168, 232, 0.12) 0%, transparent 44%),
+                radial-gradient(circle at 50% 96%, rgba(255, 46, 76, 0.08) 0%, transparent 48%),
+                linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 100% 100%, 24px 24px, 24px 24px;
+        }
+
+        /* Broadcast Carbon Ticket Pass Container */
+        .broadcast-ticket {
+            position: relative;
+            border-radius: 20px;
+            background: linear-gradient(175deg, #121726 0%, #0B0E17 58%, #0E121D 100%);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow:
+                0 26px 65px rgba(0, 0, 0, 0.9),
+                0 0 32px -10px rgba(198, 255, 0, 0.16),
+                0 0 36px -10px rgba(0, 168, 232, 0.18),
+                inset 0 1px 0 rgba(255, 255, 255, 0.12);
+        }
+
+        /* Top RGB Broadcast Spectrum Bar */
+        .rgb-spectrum-bar {
+            background: linear-gradient(90deg, #FF2E4C 0%, #FBBF24 34%, #C6FF00 68%, #00A8E8 100%);
+        }
+
+        /* Semicircular Left & Right Ticket Cutouts Matching Body Background (#07090F) */
+        .ticket-tear-row {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 22px;
+        }
+
+        .ticket-tear-row::before,
+        .ticket-tear-row::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            border-radius: 9999px;
+            background-color: #07090F;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 20;
+        }
+
+        .ticket-tear-row::before {
+            left: -13px;
+            border-right: 1px solid rgba(255, 255, 255, 0.14);
+        }
+
+        .ticket-tear-row::after {
+            right: -13px;
+            border-left: 1px solid rgba(255, 255, 255, 0.14);
+        }
+
+        /* Subtle Speed-Radar Ring Pulse */
+        @keyframes radarPing {
+            0% { transform: scale(0.9); opacity: 0.8; }
+            100% { transform: scale(1.22); opacity: 0; }
+        }
+        .radar-ring-pulse {
+            transform-origin: center;
+            animation: radarPing 2.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+        }
+
+        /* High-Contrast Electric Volt & Telegram Cyan Hero CTA Button */
+        .volt-cyan-cta {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(100deg, #00A8E8 0%, #22D3EE 46%, #C6FF00 100%);
+            color: #07090F;
+            box-shadow:
+                0 5px 0 #0369A1,
+                0 14px 30px -4px rgba(0, 168, 232, 0.58),
+                0 0 22px rgba(198, 255, 0, 0.38),
+                inset 0 1.5px 1px rgba(255, 255, 255, 0.65);
+            transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.2s ease;
+        }
+
+        .volt-cyan-cta:hover {
+            filter: brightness(1.06);
+            transform: translateY(-1.5px);
+            box-shadow:
+                0 6.5px 0 #0369A1,
+                0 18px 36px -4px rgba(0, 168, 232, 0.72),
+                0 0 28px rgba(198, 255, 0, 0.50),
+                inset 0 1.5px 1px rgba(255, 255, 255, 0.75);
+        }
+
+        .volt-cyan-cta:active {
+            transform: translateY(3px);
+            box-shadow:
+                0 2px 0 #0369A1,
+                0 6px 14px -2px rgba(0, 168, 232, 0.50);
+        }
+
+        /* Diagonal Light Sweep Across CTA */
+        .volt-cyan-cta::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -130%;
+            width: 68%;
+            height: 100%;
+            background: linear-gradient(
+                115deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.55) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: skewX(-22deg);
+            animation: ctaSweep 2.6s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        @keyframes ctaSweep {
+            0% { left: -130%; }
+            50%, 100% { left: 160%; }
+        }
+    </style>
+</head>
+<body class="arena-backdrop relative flex items-center justify-center p-2.5 sm:p-4 select-none">
+
+    <!-- Main VIP Broadcast Match Pass Ticket Container (Zero-Scroll 100dvh Fit) -->
+    <div class="broadcast-ticket w-full max-w-[420px] max-h-[97dvh] flex flex-col justify-between overflow-hidden z-10">
+
+        <!-- 1. Top RGB Spectrum Bar -->
+        <div class="rgb-spectrum-bar h-1.5 w-full flex-shrink-0"></div>
+
+        <!-- UPPER TICKET BODY -->
+        <div class="px-3.5 pt-2.5 sm:px-5 sm:pt-3.5 flex-1 flex flex-col justify-between min-h-0">
+
+            <!-- Broadcast On-Air Header Bar -->
+            <header class="w-full flex items-center justify-between gap-2 pb-2 border-b border-white/10">
+                <div class="flex items-center gap-2 min-w-0">
+                    <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-liveCrimson/15 border border-liveCrimson/45 flex-shrink-0">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-liveCrimson opacity-85"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-liveCrimson"></span>
+                        </span>
+                        <span class="font-tech text-[11px] font-bold tracking-wider text-liveCrimson uppercase whitespace-nowrap">
+                            LIVE MATCH FEED
+                        </span>
+                    </span>
+                    <span class="font-tech text-[11px] font-bold tracking-widest text-slate-400 uppercase truncate">
+                        VIP PASS #01
+                    </span>
+                </div>
+
+                <!-- Discreet Owner Gear Button to Customize Telegram Link -->
+                <button onclick="openConfigModal()" aria-label="Edit Telegram Link" title="Customize Telegram Invite Link"
+                        class="w-7 h-7 rounded-lg bg-white/[0.05] hover:bg-white/[0.14] border border-white/12 flex items-center justify-center text-slate-300 hover:text-electricVolt transition flex-shrink-0">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                </button>
+            </header>
+
+            <!-- 2. Asymmetric Sports-Broadcast Hero Block -->
+            <section class="w-full flex items-center justify-between gap-2 my-1.5">
+                <!-- Left: Skewed Ribbon Tag + Condensed Name + Stamp Badge -->
+                <div class="flex flex-col items-start text-left min-w-0 flex-1">
+                    <!-- Skewed Electric Volt Ribbon Tag -->
+                    <div class="inline-block bg-electricVolt text-matteObsidian font-tech text-[11px] sm:text-xs font-bold uppercase tracking-[0.14em] px-2.5 py-0.5 -skew-x-12 mb-1 shadow-[0_0_16px_rgba(198,255,0,0.35)]">
+                        <span class="inline-block skew-x-12 whitespace-nowrap">⚡ KING OF SESSIONS</span>
+                    </div>
+
+                    <!-- Bold Condensed Display Title -->
+                    <h1 class="font-display text-[44px] sm:text-[52px] tracking-wide uppercase leading-[0.88] text-white">
+                        GAGAN BHAI
+                    </h1>
+
+                    <!-- Stamp Badge -->
+                    <div class="mt-1.5 flex items-center gap-2">
+                        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded border border-vipGold/65 bg-vipGold/12 font-tech text-xs sm:text-[13px] font-bold uppercase tracking-[0.18em] text-vipGold">
+                            ★ SESSION KING
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Right: Custom Minimalist Cricket Ball & Stumps Speed-Radar SVG Emblem -->
+                <div class="relative w-[84px] h-[84px] sm:w-[94px] sm:h-[94px] flex-shrink-0 flex items-center justify-center">
+                    <svg class="w-full h-full overflow-visible" viewBox="0 0 112 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <radialGradient id="radarCrimsonBall" cx="38%" cy="35%" r="58%">
+                                <stop offset="0%" stop-color="#FF8FA3"/>
+                                <stop offset="35%" stop-color="#FF2E4C"/>
+                                <stop offset="85%" stop-color="#991B1B"/>
+                                <stop offset="100%" stop-color="#450A0A"/>
+                            </radialGradient>
+                            <linearGradient id="speedTrajectory" x1="16" y1="78" x2="76" y2="56" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#00A8E8" stop-opacity="0"/>
+                                <stop offset="50%" stop-color="#00A8E8" stop-opacity="0.85"/>
+                                <stop offset="100%" stop-color="#C6FF00" stop-opacity="1"/>
+                            </linearGradient>
+                        </defs>
+
+                        <!-- Speed-Radar Concentric Rings & Crosshairs -->
+                        <circle cx="56" cy="56" r="48" stroke="rgba(0, 168, 232, 0.28)" stroke-width="1" stroke-dasharray="3 3"/>
+                        <circle cx="56" cy="56" r="39" stroke="rgba(198, 255, 0, 0.22)" stroke-width="1"/>
+                        <circle class="radar-ring-pulse" cx="56" cy="56" r="41" stroke="#00A8E8" stroke-width="1.2"/>
+
+                        <!-- Radar Crosshair Ticks -->
+                        <line x1="56" y1="2" x2="56" y2="9" stroke="#C6FF00" stroke-width="1.6"/>
+                        <line x1="56" y1="103" x2="56" y2="110" stroke="#C6FF00" stroke-width="1.6"/>
+                        <line x1="2" y1="56" x2="9" y2="56" stroke="#00A8E8" stroke-width="1.6"/>
+                        <line x1="103" y1="56" x2="110" y2="56" stroke="#00A8E8" stroke-width="1.6"/>
+
+                        <!-- Minimalist 3 Stumps & Bails -->
+                        <rect x="35" y="25" width="4.5" height="56" rx="2" fill="#E2E8F0"/>
+                        <rect x="45" y="25" width="4.5" height="56" rx="2" fill="#E2E8F0"/>
+                        <rect x="55" y="25" width="4.5" height="56" rx="2" fill="#E2E8F0"/>
+                        <rect x="34" y="21" width="11.5" height="2.6" rx="1.3" fill="#C6FF00"/>
+                        <rect x="48" y="21" width="11.5" height="2.6" rx="1.3" fill="#C6FF00"/>
+
+                        <!-- Speed Trajectory Arcs -->
+                        <path d="M16 76 C 34 80, 52 73, 72 60" stroke="url(#speedTrajectory)" stroke-width="3.5" stroke-linecap="round"/>
+                        <path d="M22 65 C 38 68, 53 64, 70 55" stroke="#C6FF00" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 3"/>
+
+                        <!-- Glossy Cricket Ball -->
+                        <circle cx="73" cy="60" r="15" fill="url(#radarCrimsonBall)" stroke="#FBBF24" stroke-width="1.5"/>
+                        <path d="M64.5 50 C 69.5 55.5, 69.5 64.5, 64.5 70" stroke="#FEF08A" stroke-width="1.3" stroke-dasharray="2 1.8" stroke-linecap="round"/>
+                        <path d="M81.5 50 C 76.5 55.5, 76.5 64.5, 81.5 70" stroke="#FEF08A" stroke-width="1.3" stroke-dasharray="2 1.8" stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </section>
+
+            <!-- 3. 3-Column Metrics Strip -->
+            <section class="grid grid-cols-3 gap-2 w-full my-1.5">
+                <div class="rounded-xl bg-white/[0.035] border border-white/10 py-1.5 px-1 text-center">
+                    <div class="font-display text-xl sm:text-2xl text-electricVolt leading-none tracking-wide">95%</div>
+                    <div class="font-tech text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider mt-0.5">ACCURACY</div>
+                </div>
+                <div class="rounded-xl bg-white/[0.035] border border-white/10 py-1.5 px-1 text-center">
+                    <div class="font-display text-xl sm:text-2xl text-vipGold leading-none tracking-wide">50K+</div>
+                    <div class="font-tech text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider mt-0.5">MEMBERS</div>
+                </div>
+                <div class="rounded-xl bg-white/[0.035] border border-white/10 py-1.5 px-1 text-center">
+                    <div class="font-display text-xl sm:text-2xl text-telegramCyan leading-none tracking-wide">100%</div>
+                    <div class="font-tech text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider mt-0.5">FREE TIPS</div>
+                </div>
+            </section>
+
+            <!-- 4. 3-Row LIVE SESSION SLIP -->
+            <section class="w-full rounded-xl bg-matteObsidian/90 border border-white/12 overflow-hidden my-1">
+                <!-- Slip Header -->
+                <div class="flex items-center justify-between px-3 py-1 bg-white/[0.04] border-b border-white/[0.08]">
+                    <span class="font-tech text-[11px] font-bold tracking-widest text-slate-300 uppercase">
+                        LIVE SESSION SLIP
+                    </span>
+                    <span class="font-tech text-[11px] font-bold tracking-wider text-electricVolt uppercase">
+                        ● VERIFIED CALLS
+                    </span>
+                </div>
+
+                <!-- 3 Session Rows -->
+                <div class="divide-y divide-white/[0.07]">
+                    <!-- Row 1: 06 OVERS -->
+                    <div class="flex items-center justify-between px-3 py-1.5">
+                        <span class="font-tech text-xs sm:text-[13px] font-bold text-white tracking-wide">
+                            <span class="text-electricVolt">06 OVERS</span> • POWERPLAY
+                        </span>
+                        <span class="px-2 py-0.5 rounded bg-emerald-500/15 border border-emerald-400/35 font-tech text-[10.5px] font-bold text-emerald-300 uppercase tracking-wider">
+                            PASS ✓
+                        </span>
+                    </div>
+
+                    <!-- Row 2: 10 OVERS -->
+                    <div class="flex items-center justify-between px-3 py-1.5">
+                        <span class="font-tech text-xs sm:text-[13px] font-bold text-white tracking-wide">
+                            <span class="text-vipGold">10 OVERS</span> • MID INNINGS
+                        </span>
+                        <span class="px-2 py-0.5 rounded bg-amber-500/15 border border-amber-400/35 font-tech text-[10.5px] font-bold text-amber-300 uppercase tracking-wider">
+                            LIVE CALL
+                        </span>
+                    </div>
+
+                    <!-- Row 3: 20 OVERS -->
+                    <div class="flex items-center justify-between px-3 py-1.5">
+                        <span class="font-tech text-xs sm:text-[13px] font-bold text-white tracking-wide">
+                            <span class="text-telegramCyan">20 OVERS</span> • JACKPOT LAMBI
+                        </span>
+                        <span class="px-2 py-0.5 rounded bg-sky-500/15 border border-sky-400/35 font-tech text-[10.5px] font-bold text-sky-300 uppercase tracking-wider">
+                            FREE VIP
+                        </span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- 5. Semicircular Ticket Cutouts + Dashed Tear-Line Separator -->
+        <div class="ticket-tear-row flex-shrink-0 my-0.5">
+            <div class="w-full border-t-2 border-dashed border-white/18 mx-3"></div>
+        </div>
+
+        <!-- 6. Ticket Stub Footer: Single High-Contrast Electric Volt & Telegram Cyan CTA -->
+        <div class="px-3.5 pb-3 pt-0.5 sm:px-5 sm:pb-4 flex flex-col items-center text-center flex-shrink-0">
+            <a id="joinTelegramBtn"
+               href="https://t.me/+hCgK0V4YtixmMDdl"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="volt-cyan-cta w-full py-3 sm:py-3.5 px-4 rounded-xl flex items-center justify-between gap-2.5 cursor-pointer border border-white/45">
+
+                <!-- Left Telegram Icon Badge -->
+                <span class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-matteObsidian text-white flex items-center justify-center flex-shrink-0 shadow">
+                    <svg class="w-5 h-5 fill-current -ml-0.5" viewBox="0 0 24 24">
+                        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                    </svg>
+                </span>
+
+                <!-- Center Bold CTA Copy -->
+                <span class="flex flex-col items-center text-center leading-none flex-1">
+                    <span class="font-display text-[21px] sm:text-[24px] tracking-wider uppercase text-matteObsidian">
+                        JOIN TELEGRAM CHANNEL →
+                    </span>
+                    <span class="font-tech text-[10.5px] sm:text-[11px] font-bold tracking-widest text-matteObsidian/90 uppercase mt-0.5">
+                        FREE ENTRY • INSTANT MATCH ACCESS
+                    </span>
+                </span>
+            </a>
+
+            <p class="font-tech text-[11px] font-bold text-slate-400 mt-1.5 tracking-wider uppercase">
+                ⚡ Tap Above To Open Telegram Immediately
+            </p>
+        </div>
+    </div>
+
+    <!-- Floating Confirmation Toast -->
+    <div id="toastBanner" class="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 hidden items-center gap-2 px-4 py-2 rounded-full bg-broadcastCarbon/95 border border-electricVolt/50 text-electricVolt font-tech text-xs font-bold tracking-wider uppercase shadow-2xl max-w-[92vw]">
+        <span class="w-2 h-2 rounded-full bg-electricVolt animate-ping flex-shrink-0"></span>
+        <span id="toastText" class="truncate">Link Updated!</span>
+    </div>
+
+    <!-- Owner Link Customizer Modal (Triggered by Gear Icon) -->
+    <div id="configModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/85 backdrop-blur-sm">
+        <div class="w-full max-w-sm rounded-2xl bg-broadcastCarbon border border-electricVolt/45 p-5 shadow-2xl">
+            <div class="flex items-center justify-between mb-2.5">
+                <h2 class="font-display text-xl tracking-wider uppercase text-electricVolt">
+                    Telegram Channel Link
+                </h2>
+                <button onclick="closeConfigModal()" aria-label="Close modal"
+                        class="text-slate-400 hover:text-white p-1.5 rounded-lg bg-white/5 hover:bg-white/10 transition">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <p class="text-xs text-slate-300 mb-3 leading-relaxed">
+                Manage Gagan Bhai's Telegram invite link (<span class="text-electricVolt font-mono">t.me/...</span>). Tapping the Join button opens this URL directly.
+            </p>
+            <input id="tgUrlInput" type="url" value="https://t.me/+hCgK0V4YtixmMDdl" placeholder="https://t.me/+YourChannelInvite"
+                   class="w-full bg-matteObsidian border border-white/15 focus:border-electricVolt rounded-xl px-3.5 py-2.5 text-xs text-white font-mono outline-none mb-3">
+
+            <div class="grid grid-cols-3 gap-2">
+                <button onclick="saveCustomUrl()"
+                        class="bg-electricVolt hover:brightness-105 text-matteObsidian font-extrabold text-xs py-2.5 rounded-xl transition">
+                    Save
+                </button>
+                <button onclick="resetDefaultUrl()"
+                        class="bg-vipGold/20 hover:bg-vipGold/30 border border-vipGold/40 text-vipGold font-bold text-xs py-2.5 rounded-xl transition">
+                    Reset
+                </button>
+                <button onclick="copyActiveUrl()"
+                        class="bg-white/10 hover:bg-white/15 text-white font-bold text-xs py-2.5 rounded-xl transition">
+                    Copy
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const DEFAULT_TELEGRAM_URL = 'https://t.me/+hCgK0V4YtixmMDdl';
+        const STORAGE_KEY = 'gagan_broadcast_tg_url';
+        const VERSION_KEY = 'gagan_broadcast_tg_ver';
+        const CURRENT_VERSION = 'hCgK0V4YtixmMDdl_v1';
+
+        const joinBtn = document.getElementById('joinTelegramBtn');
+        const configModal = document.getElementById('configModal');
+        const tgUrlInput = document.getElementById('tgUrlInput');
+        const toastBanner = document.getElementById('toastBanner');
+        const toastText = document.getElementById('toastText');
+
+        let activeUrl = DEFAULT_TELEGRAM_URL;
+        let toastTimer = null;
+
+        function applyUrl(url) {
+            activeUrl = url;
+            joinBtn.href = url;
+            tgUrlInput.value = url;
+        }
+
+        // Load saved URL or initialize directly to https://t.me/+hCgK0V4YtixmMDdl
+        try {
+            const storedVersion = localStorage.getItem(VERSION_KEY);
+            const storedUrl = localStorage.getItem(STORAGE_KEY);
+
+            if (storedVersion !== CURRENT_VERSION) {
+                localStorage.setItem(VERSION_KEY, CURRENT_VERSION);
+                localStorage.setItem(STORAGE_KEY, DEFAULT_TELEGRAM_URL);
+                applyUrl(DEFAULT_TELEGRAM_URL);
+            } else if (storedUrl && storedUrl.trim() !== '') {
+                applyUrl(storedUrl.trim());
+            } else {
+                localStorage.setItem(STORAGE_KEY, DEFAULT_TELEGRAM_URL);
+                applyUrl(DEFAULT_TELEGRAM_URL);
+            }
+        } catch (err) {
+            applyUrl(DEFAULT_TELEGRAM_URL);
+        }
+
+        function showToast(msg) {
+            toastText.textContent = msg;
+            toastBanner.classList.remove('hidden');
+            toastBanner.classList.add('flex');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                toastBanner.classList.add('hidden');
+                toastBanner.classList.remove('flex');
+            }, 2400);
+        }
+
+        function openConfigModal() {
+            tgUrlInput.value = activeUrl;
+            configModal.classList.remove('hidden');
+            configModal.classList.add('flex');
+        }
+
+        function closeConfigModal() {
+            configModal.classList.add('hidden');
+            configModal.classList.remove('flex');
+        }
+
+        function saveCustomUrl() {
+            let val = tgUrlInput.value.trim();
+            if (!val) return;
+            if (!/^https?:\/\//i.test(val)) {
+                val = 'https://' + val;
+            }
+            applyUrl(val);
+            try {
+                localStorage.setItem(VERSION_KEY, CURRENT_VERSION);
+                localStorage.setItem(STORAGE_KEY, val);
+            } catch (err) {}
+            closeConfigModal();
+            showToast('✓ Telegram Link Updated!');
+        }
+
+        function resetDefaultUrl() {
+            applyUrl(DEFAULT_TELEGRAM_URL);
+            try {
+                localStorage.setItem(VERSION_KEY, CURRENT_VERSION);
+                localStorage.setItem(STORAGE_KEY, DEFAULT_TELEGRAM_URL);
+            } catch (err) {}
+            closeConfigModal();
+            showToast('✓ Reset to Default Link!');
+        }
+
+        function copyActiveUrl() {
+            const tempInput = document.createElement('input');
+            tempInput.value = activeUrl;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            tempInput.setSelectionRange(0, 99999);
+            try {
+                document.execCommand('copy');
+                showToast('✓ Telegram Link Copied!');
+            } catch (err) {}
+            document.body.removeChild(tempInput);
+        }
+
+        // Close modal on backdrop tap
+        configModal.addEventListener('click', (e) => {
+            if (e.target === configModal) closeConfigModal();
+        });
+    </script>
+</body>
+</html>
